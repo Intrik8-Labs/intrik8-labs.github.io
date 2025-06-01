@@ -90,23 +90,38 @@ export default function Home() {
               <p className="text-slate-300">Core framework for scalable, modular, and intelligent business systems. The world tree that connects all our services.</p>
             </div>
             <div className="bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-400/20 border border-slate-700 transition">
-              <h3 className="text-cyan-300 text-xl font-semibold mb-2">Týr</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-2 py-1 text-xs font-semibold bg-cyan-900 text-cyan-300 rounded">Phase 1</span>
+                <h3 className="text-cyan-300 text-xl font-semibold">Týr</h3>
+              </div>
               <p className="text-slate-300">Authentication and Identity Management engine. Named after the god of law and justice.</p>
             </div>
             <div className="bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-400/20 border border-slate-700 transition">
-              <h3 className="text-cyan-300 text-xl font-semibold mb-2">Heimdallr</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-2 py-1 text-xs font-semibold bg-cyan-900 text-cyan-300 rounded">Phase 1</span>
+                <h3 className="text-cyan-300 text-xl font-semibold">Heimdallr</h3>
+              </div>
               <p className="text-slate-300">Observability and monitoring at the edge. The ever-vigilant guardian of our systems.</p>
             </div>
             <div className="bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-400/20 border border-slate-700 transition">
-              <h3 className="text-cyan-300 text-xl font-semibold mb-2">Sleipnir</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-2 py-1 text-xs font-semibold bg-cyan-900 text-cyan-300 rounded">Phase 4</span>
+                <h3 className="text-cyan-300 text-xl font-semibold">Sleipnir</h3>
+              </div>
               <p className="text-slate-300">Automation and integration workflows, powered by modern logic. The fastest and most reliable messenger.</p>
             </div>
             <div className="bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-400/20 border border-slate-700 transition">
-              <h3 className="text-cyan-300 text-xl font-semibold mb-2">Mímir</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-2 py-1 text-xs font-semibold bg-cyan-900 text-cyan-300 rounded">Phase 2</span>
+                <h3 className="text-cyan-300 text-xl font-semibold">Mímir</h3>
+              </div>
               <p className="text-slate-300">Task and ticket management built for small teams and enterprises alike. The well of wisdom for your organization.</p>
             </div>
             <div className="bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-400/20 border border-slate-700 transition">
-              <h3 className="text-cyan-300 text-xl font-semibold mb-2">Skuld</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-2 py-1 text-xs font-semibold bg-cyan-900 text-cyan-300 rounded">Phase 4</span>
+                <h3 className="text-cyan-300 text-xl font-semibold">Skuld</h3>
+              </div>
               <p className="text-slate-300">Billing, invoicing, and operational intelligence — especially for logistics. The future is in good hands.</p>
             </div>
           </div>
