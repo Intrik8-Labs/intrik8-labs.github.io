@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Intrik8 Labs – Builders of the Yggdrasil Platform and Norse-inspired enterprise software.">
+  <title>Intrik8 Labs – Yggdrasil Platform</title>
+  <style>
+    :root {
+      --color-bg: #23212b;
+      --color-bg-alt: #25232f;
+      --color-text: #f2f2f2;
+      --color-accent: #48c9b0;
+      --color-gray: #999;
+      --font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-accent);
+    }
+
+    h2 {
+      color: var(--color-gray);
+      font-weight: normal;
+      font-size: 1.25rem;
+    }
+
+    section {
+      max-width: 900px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .platforms {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .platform {
+      background-color: var(--color-bg-alt);
+      border-radius: 1rem;
+      margin: 1rem;
+      padding: 1.5rem;
+      width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease;
+    }
+
+    .platform:hover {
+      transform: translateY(-5px);
+    }
+
+    .platform h3 {
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer {
+      margin-top: auto;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: var(--color-gray);
+      text-align: center;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .platform {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Intrik8 Labs</h1>
+    <h2>Norse-Inspired Intelligence Infrastructure</h2>
+  </header>
+
+  <section>
+    <p>
+      Welcome to Intrik8 Labs — creators of the <strong>Yggdrasil Platform</strong>, a modular suite of enterprise-ready services built for performance, clarity, and sovereignty. 
+    </p>
+    <div class="platforms">
+      <div class="platform">
+        <h3>Yggdrasil Platform</h3>
+        <p>Core framework for scalable, modular, and intelligent business systems.</p>
+      </div>
+      <div class="platform">
+        <h3>Týr</h3>
+        <p>Authentication and Identity Management engine.</p>
+      </div>
+      <div class="platform">
+        <h3>Heimdallr</h3>
+        <p>Observability and monitoring at the edge.</p>
+      </div>
+      <div class="platform">
+        <h3>Sleipnir</h3>
+        <p>Automation and integration workflows, powered by modern logic.</p>
+      </div>
+      <div class="platform">
+        <h3>Mímir</h3>
+        <p>Task and ticket management built for small teams and enterprises alike.</p>
+      </div>
+      <div class="platform">
+        <h3>Skuld</h3>
+        <p>Billing, invoicing, and operational intelligence — especially for logistics.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    &copy; 2025 Intrik8 Labs. Powered by the Yggdrasil Platform. |
+    <a href="https://github.com/Intrik8Labs">GitHub</a>
+  </div>
+
+</body>
+</html>
