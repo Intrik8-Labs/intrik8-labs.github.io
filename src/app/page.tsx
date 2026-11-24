@@ -22,7 +22,7 @@ export default function Home() {
           <nav aria-label="Main navigation">
             <a href="#products">Products</a>
             <a href="#studio">Studio</a>
-            <a className="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+            <a className="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗︎</span></a>
           </nav>
         </div>
       </header>
@@ -36,8 +36,8 @@ export default function Home() {
               Intrik8 Labs is building tools for small businesses and independent operators to keep track of their equipment, work, and documents.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#products">Explore the products <span aria-hidden="true">↓</span></a>
-              <a className="text-link" href={github}>Follow on GitHub <span aria-hidden="true">↗</span></a>
+              <a className="button button-primary" href="#products">Explore the products <span aria-hidden="true">↓︎</span></a>
+              <a className="text-link" href={github}>Follow on GitHub <span aria-hidden="true">↗︎</span></a>
             </div>
           </div>
           <div className="hero-art" aria-hidden="true" />
@@ -62,7 +62,7 @@ export default function Home() {
                   <li>Locations</li>
                   <li>Follow-up work</li>
                 </ul>
-                <a className="text-link product-link" href={`${github}/yggdrasil/tree/dev`}>See the Yggdrasil plans <span aria-hidden="true">↗</span></a>
+                <a className="text-link product-link" href={`${github}/yggdrasil/tree/dev`}>See the Yggdrasil plans <span aria-hidden="true">↗︎</span></a>
               </article>
               <article className="product-card skald-card">
                 <div className="product-heading">
@@ -76,7 +76,7 @@ export default function Home() {
                   <li>Review</li>
                   <li>Final</li>
                 </ol>
-                <a className="text-link product-link" href="#contact">Ask about Skald <span aria-hidden="true">↘</span></a>
+                <a className="text-link product-link" href="#contact">Ask about Skald <span aria-hidden="true">↘︎</span></a>
               </article>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function Home() {
             <h2 id="contact-title">Let’s talk.</h2>
             <p>Have a question about Yggdrasil or Skald? Tell me how you handle that work today.</p>
           </div>
-          <a className="button button-primary" href={linkedIn}>Connect with Jason on LinkedIn <span aria-hidden="true">↗</span></a>
+          <a className="button button-primary" href={linkedIn}>Connect with Jason on LinkedIn <span aria-hidden="true">↗︎</span></a>
         </section>
       </main>
 
@@ -107,7 +107,7 @@ export default function Home() {
         <div className="shell footer-inner">
           <Wordmark />
           <span>Las Vegas, Nevada</span>
-          <a className="text-link" href={github}>GitHub <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href={github}>GitHub <span aria-hidden="true">↗︎</span></a>
         </div>
       </footer>
     </>

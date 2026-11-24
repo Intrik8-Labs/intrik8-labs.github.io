@@ -14,7 +14,7 @@ export default function ThankYou() {
       <p className="eyebrow"><span className="accent-line" /> Contact</p>
       <h1>Get in touch</h1>
       <p>Contact Intrik8 Labs through the link on our homepage.</p>
-      <Link className="button button-primary" href="/#contact">Visit the contact section <span aria-hidden="true">↗</span></Link>
+      <Link className="button button-primary" href="/#contact">Visit the contact section <span aria-hidden="true">↗︎</span></Link>
     </main>
   );
 }
