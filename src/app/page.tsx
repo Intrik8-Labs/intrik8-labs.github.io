@@ -1,199 +1,115 @@
-"use client";
+import Link from "next/link";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import Script from "next/script";
+const github = "https://github.com/Intrik8-Labs";
+const linkedIn = "https://www.linkedin.com/in/jasonrscherer/";
 
-// Add type declaration for gtag
-declare global {
-  interface Window {
-    gtag: (
-      command: string,
-      action: string,
-      params?: {
-        event_category?: string;
-        event_label?: string;
-        value?: number;
-      }
-    ) => void;
-  }
+function Wordmark() {
+  return (
+    <Link className="wordmark" href="/" aria-label="Intrik8 Labs home">
+      <span className="brand-mark" aria-hidden="true"><span>8</span></span>
+      <span>Intrik8 <b>Labs</b></span>
+    </Link>
+  );
 }
 
 export default function Home() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [error, setError] = useState("");
-  const router = useRouter();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-
-    try {
-      // Track form submission with Google Analytics
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'form_submission', {
-          'event_category': 'Contact',
-          'event_label': 'Contact Form',
-          'value': 1
-        });
-      }
-
-      // Navigate to thank you page
-      router.push('/thank-you');
-    } catch {
-      setError("Something went wrong. Please try again.");
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setForm(prev => ({ ...prev, [name]: value }));
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-slate-100">
-      {/* Google Analytics Script */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-XXXXXXXXXX');
-        `}
-      </Script>
-
-      <header className="py-16 text-center bg-gradient-to-b from-slate-900 to-transparent">
-        <h1 className="text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">
-          Intrik8 Labs
-        </h1>
-        <h2 className="text-xl text-slate-400 mb-6 font-medium">
-          Norse-Inspired Intelligence Infrastructure
-        </h2>
-        <p className="max-w-xl mx-auto text-slate-300 text-lg">
-          Welcome to Intrik8 Labs — creators of the <strong className="text-cyan-300">Yggdrasil Platform</strong>, a modular suite of enterprise-ready services built for performance, clarity, and sovereignty.
-        </p>
+    <>
+      <a className="skip-link" href="#main">Skip to content</a>
+      <header className="site-header">
+        <div className="shell header-inner">
+          <Wordmark />
+          <nav aria-label="Main navigation">
+            <a href="#products">Products</a>
+            <a href="#studio">Studio</a>
+            <a className="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+          </nav>
+        </div>
       </header>
 
-      <main className="container mx-auto px-4 py-12">
-        <section className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-2 text-slate-100">Our Platform Components</h2>
-            <p className="text-slate-400">Built with modern technology and ancient wisdom</p>
+      <main id="main">
+        <section className="hero shell" aria-labelledby="hero-title">
+          <div className="hero-copy">
+            <p className="eyebrow"><span className="accent-line" /> Independent software studio</p>
+            <h1 id="hero-title">Practical software<br className="hero-break" /> for <em>small teams.</em></h1>
+            <p className="hero-description">
+              Intrik8 Labs is building tools for small businesses and independent operators to keep track of their equipment, work, and documents.
+            </p>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#products">Explore the products <span aria-hidden="true">↓</span></a>
+              <a className="text-link" href={github}>Follow on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-400/20 border border-slate-700 transition">
-              <h3 className="text-cyan-300 text-xl font-semibold mb-2">Yggdrasil Platform</h3>
-              <p className="text-slate-300">Core framework for scalable, modular, and intelligent business systems. The world tree that connects all our services.</p>
+          <div className="hero-art" aria-hidden="true" />
+        </section>
+
+        <section className="products" id="products" aria-labelledby="products-title">
+          <div className="shell section-inner">
+            <div className="section-header">
+              <p className="eyebrow"><span className="accent-line" /> Products</p>
+              <h2 id="products-title">What we’re building</h2>
             </div>
-            <div className="bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-400/20 border border-slate-700 transition">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="px-2 py-1 text-xs font-semibold bg-cyan-900 text-cyan-300 rounded">Phase 1</span>
-                <h3 className="text-cyan-300 text-xl font-semibold">Týr</h3>
-              </div>
-              <p className="text-slate-300">Authentication and Identity Management engine. Named after the god of law and justice.</p>
-            </div>
-            <div className="bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-400/20 border border-slate-700 transition">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="px-2 py-1 text-xs font-semibold bg-cyan-900 text-cyan-300 rounded">Phase 1</span>
-                <h3 className="text-cyan-300 text-xl font-semibold">Heimdallr</h3>
-              </div>
-              <p className="text-slate-300">Observability and monitoring at the edge. The ever-vigilant guardian of our systems.</p>
-            </div>
-            <div className="bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-400/20 border border-slate-700 transition">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="px-2 py-1 text-xs font-semibold bg-cyan-900 text-cyan-300 rounded">Phase 4</span>
-                <h3 className="text-cyan-300 text-xl font-semibold">Sleipnir</h3>
-              </div>
-              <p className="text-slate-300">Automation and integration workflows, powered by modern logic. The fastest and most reliable messenger.</p>
-            </div>
-            <div className="bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-400/20 border border-slate-700 transition">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="px-2 py-1 text-xs font-semibold bg-cyan-900 text-cyan-300 rounded">Phase 2</span>
-                <h3 className="text-cyan-300 text-xl font-semibold">Mímir</h3>
-              </div>
-              <p className="text-slate-300">Task and ticket management built for small teams and enterprises alike. The well of wisdom for your organization.</p>
-            </div>
-            <div className="bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-400/20 border border-slate-700 transition">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="px-2 py-1 text-xs font-semibold bg-cyan-900 text-cyan-300 rounded">Phase 4</span>
-                <h3 className="text-cyan-300 text-xl font-semibold">Skuld</h3>
-              </div>
-              <p className="text-slate-300">Billing, invoicing, and operational intelligence — especially for logistics. The future is in good hands.</p>
+            <div className="product-grid">
+              <article className="product-card">
+                <div className="product-heading">
+                  <p className="eyebrow">Asset management</p>
+                  <p className="status"><span /> In planning</p>
+                </div>
+                <h3>Yggdrasil</h3>
+                <p>A modular operations platform starting with computer inventory. The first version is planned to help you track what you own, where it is, what changed, and what needs follow-up.</p>
+                <ul className="product-scope" aria-label="Initial Yggdrasil scope">
+                  <li>Inventory</li>
+                  <li>Locations</li>
+                  <li>Follow-up work</li>
+                </ul>
+                <a className="text-link product-link" href={`${github}/yggdrasil/tree/dev`}>See the Yggdrasil plans <span aria-hidden="true">↗</span></a>
+              </article>
+              <article className="product-card skald-card">
+                <div className="product-heading">
+                  <p className="eyebrow">Document workflows</p>
+                  <p className="status"><span /> In design</p>
+                </div>
+                <h3>Skald</h3>
+                <p>A standalone tool for creating documents from templates, moving them through review, and keeping a history of revisions and approvals.</p>
+                <ol className="product-scope" aria-label="Planned Skald workflow">
+                  <li>Draft</li>
+                  <li>Review</li>
+                  <li>Final</li>
+                </ol>
+                <a className="text-link product-link" href="#contact">Ask about Skald <span aria-hidden="true">↘</span></a>
+              </article>
             </div>
           </div>
         </section>
 
-        <section className="max-w-lg mx-auto">
-          <div className="bg-slate-800 rounded-xl p-8 shadow-lg border border-slate-700">
-            <h2 className="text-2xl font-bold text-cyan-300 mb-4 text-center">Join the Waitlist</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 rounded-md bg-slate-900 text-slate-100 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 rounded-md bg-slate-900 text-slate-100 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
-                  Message (Optional)
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-2 rounded-md bg-slate-900 text-slate-100 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                />
-              </div>
-
-              {error && (
-                <p className="text-red-400 text-sm">{error}</p>
-              )}
-
-              <button
-                type="submit"
-                className="w-full px-6 py-3 rounded-lg bg-cyan-400 text-slate-900 font-bold text-lg shadow hover:bg-cyan-300 transition"
-              >
-                Join Waitlist
-              </button>
-            </form>
+        <section className="shell studio section-inner" id="studio" aria-labelledby="studio-title">
+          <div className="section-header">
+            <p className="eyebrow"><span className="accent-line" /> The studio</p>
+            <h2 id="studio-title">Built around<br /> everyday work.</h2>
           </div>
+          <div className="studio-copy">
+            <p>I’m Jason Scherer, a software engineer and the founder of Intrik8 Labs in Las Vegas. I started the studio to build the kinds of tools I wanted to use myself, starting with keeping track of my own computers and homelab.</p>
+            <p>That same approach drives Skald. Start with a workflow people already have, then make it easier to run and maintain.</p>
+          </div>
+        </section>
+
+        <section className="shell contact" id="contact" aria-labelledby="contact-title">
+          <div>
+            <p className="eyebrow"><span className="accent-line" /> Contact</p>
+            <h2 id="contact-title">Let’s talk.</h2>
+            <p>Have a question about Yggdrasil or Skald? Tell me how you handle that work today.</p>
+          </div>
+          <a className="button button-primary" href={linkedIn}>Connect with Jason on LinkedIn <span aria-hidden="true">↗</span></a>
         </section>
       </main>
 
-      <footer className="py-8 text-center text-slate-500 text-sm border-t border-slate-800 mt-8">
-        &copy; {new Date().getFullYear()} Intrik8 Labs &mdash; Powered by the Yggdrasil Platform. |
-        <a href="https://github.com/Intrik8Labs" className="text-cyan-400 hover:underline ml-1">GitHub</a>
+      <footer className="site-footer">
+        <div className="shell footer-inner">
+          <Wordmark />
+          <span>Las Vegas, Nevada</span>
+          <a className="text-link" href={github}>GitHub <span aria-hidden="true">↗</span></a>
+        </div>
       </footer>
-    </div>
+    </>
   );
 }
